@@ -12,6 +12,8 @@
 extern "C" {
 #endif
 
+#define DELAY_USEC  1000
+
 void delayusec(uint32_t usectime);
 void debug_LED();
 

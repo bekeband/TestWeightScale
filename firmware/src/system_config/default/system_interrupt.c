@@ -65,12 +65,74 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "test.h"
 #include "system_definitions.h"
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: System Interrupt Vector Functions
 // *****************************************************************************
 // *****************************************************************************
-   
+void __ISR(_TIMER_5_VECTOR, ipl1AUTO) _IntHandlerDrvTmrInstance0(void)
+{
+  USECTIMERFLAG = 1;
+    PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_5);
+
+}
+void __ISR(_TIMER_2_VECTOR, ipl1AUTO) _IntHandlerDrvTmrInstance1(void)
+{
+  SCALE_READ_FLAG = 1;
+  PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_2); 
+}
+void __ISR(_TIMER_3_VECTOR, ipl1AUTO) _IntHandlerDrvTmrInstance2(void)
+{
+ 
+    PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_3);
+ 
+}
+
+void __ISR(_UART_2_VECTOR, ipl1AUTO) _IntHandlerDrvUsartInstance0(void)
+{ uint8_t ibyte;
+  if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_2_ERROR))
+  {
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_2_ERROR);
+  } else
+  if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_2_RECEIVE))
+  {
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_2_RECEIVE);
+    ibyte = PLIB_USART_ReceiverByteReceive(USART_ID_2);
+  } else
+  if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_2_TRANSMIT))
+  {
+
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_2_TRANSMIT);
+    PLIB_INT_SourceDisable(INT_ID_0, INT_SOURCE_USART_2_TRANSMIT);
+  }
+}
+
+void __ISR(_UART_5_VECTOR, ipl1AUTO) _IntHandlerDrvUsartInstance1(void)
+{
+  if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_5_ERROR))
+  {
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_5_ERROR);
+  } else
+  if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_5_RECEIVE))
+  {
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_5_RECEIVE);
+  } else
+  if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_5_TRANSMIT))
+  {
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_5_TRANSMIT);
+    PLIB_INT_SourceDisable(INT_ID_0, INT_SOURCE_USART_5_TRANSMIT);
+  }
+}
+
+void __ISR(_RTCC_VECTOR, ipl1AUTO) _IntHandlerRTCC(void)
+{
+//    SYS_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_6);
+    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_RTCC);
+    alarmTriggered = 1;
+}
+
+
 /*******************************************************************************
  End of File
 */

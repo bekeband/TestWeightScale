@@ -40,7 +40,7 @@ uint32_t HX711_GetData(int bitnum)
 }
 
 uint32_t HX711_GetAverageData()
-{ int i; float ADFLOAT; uint32_t ADSUM = 0;
+{ int i; uint32_t ADSUM = 0;
   for (i = 0; i < AD_AVERAGE; i++)
   {
     while (!HX711_IsReadyData());

@@ -22,7 +22,7 @@ extern "C" {
 #define IDATA  PLIB_PORTS_PinDirectionInputSet(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_5);
 #define DOUT PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_5)
 
-#define AD_AVERAGE  16
+#define AD_AVERAGE  1
 #define AD_GAIN_128 25
 #define AD_GANI_64  27
 

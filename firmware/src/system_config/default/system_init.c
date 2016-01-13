@@ -113,6 +113,9 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 //<editor-fold defaultstate="collapsed" desc="DRV_Timer Initialization Data">
 
 // </editor-fold>
+//<editor-fold defaultstate="collapsed" desc="DRV_USART Initialization Data">
+
+// </editor-fold>
 //<editor-fold defaultstate="collapsed" desc="DRV_I2C Initialization Data">
 // </editor-fold>
 
@@ -188,7 +191,12 @@ void SYS_Initialize ( void* data )
     /*Initialize TMR2 */
     DRV_TMR2_Initialize();
  
-     DRV_I2C0_Initialize();
+     DRV_USART0_Initialize();
+    DRV_USART1_Initialize();
+    DRV_I2C0_Initialize();
+
+    /* RTCC Initialization Call */
+    DRV_RTCC_Initialize();
 
 
     /* Initialize System Services */

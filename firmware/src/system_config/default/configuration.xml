@@ -32,6 +32,10 @@
   <Manifest>
     <Files>
       <File>
+        <Name>driver.h</Name>
+        <Path>Header Files/framework/driver</Path>
+      </File>
+      <File>
         <Name>sys_module.h</Name>
         <Path>Header Files/framework/system/common</Path>
       </File>
@@ -52,16 +56,16 @@
         <Path>Header Files/framework/system/ports</Path>
       </File>
       <File>
-        <Name>system.h</Name>
-        <Path>Header Files/framework/system</Path>
+        <Name>sys_int_pic32.c</Name>
+        <Path>Source Files/framework/system/int/src</Path>
       </File>
       <File>
         <Name>sys_ports.c</Name>
         <Path>Source Files/framework/system/ports/src</Path>
       </File>
       <File>
-        <Name>sys_int_pic32.c</Name>
-        <Path>Source Files/framework/system/int/src</Path>
+        <Name>system.h</Name>
+        <Path>Header Files/framework/system</Path>
       </File>
       <File>
         <Name>sys_devcon.h</Name>
@@ -89,7 +93,7 @@
       <Template>
         <Name>system_config.h</Name>
         <Path>Header Files/app/system_config/default</Path>
-        <Checksum>D6A729A50238B8968E6095CEB3FD2AC5</Checksum>
+        <Checksum>F74C4104752C928D79436570BEFA2942</Checksum>
       </Template>
       <Template>
         <Name>drv_i2c_static.c</Name>
@@ -97,9 +101,14 @@
         <Checksum>3B29BE6D99D3D63D4B403C8FEA68484A</Checksum>
       </Template>
       <Template>
+        <Name>drv_usart_static.h</Name>
+        <Path>Header Files/app/system_config/default/framework/driver/usart</Path>
+        <Checksum>78816446BC37CA452E12C9F1F3586B2C</Checksum>
+      </Template>
+      <Template>
         <Name>system_interrupt.c</Name>
         <Path>Source Files/app/system_config/default</Path>
-        <Checksum>423569036137DFA0B93A153A49209253</Checksum>
+        <Checksum>3D63CD384F424DF291F998C7DC24DF79</Checksum>
       </Template>
       <Template>
         <Name>sys_ports_static.c</Name>
@@ -119,7 +128,7 @@
       <Template>
         <Name>drv_tmr_static.c</Name>
         <Path>Source Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum>043ECA2F00233C41BF300D43E16C0716</Checksum>
+        <Checksum>79F90B0C3F64CDC7465323EF6A48C696</Checksum>
       </Template>
       <Template>
         <Name>Test.c</Name>
@@ -131,9 +140,29 @@
         <Checksum>BDDCED2F6306E40124682DAB41CC554F</Checksum>
       </Template>
       <Template>
+        <Name>drv_rtcc_static.h</Name>
+        <Path>Header Files/app/system_config/default/framework/driver/rtcc</Path>
+        <Checksum>FED59BF02817E49C245011170B963EE2</Checksum>
+      </Template>
+      <Template>
+        <Name>drv_rtcc_static.c</Name>
+        <Path>Source Files/app/system_config/default/framework/driver/rtcc/src</Path>
+        <Checksum>BF72A08166E6B7B7D3F73E4429742E82</Checksum>
+      </Template>
+      <Template>
         <Name>system_init.c</Name>
         <Path>Source Files/app/system_config/default</Path>
-        <Checksum>F00AB229F1005A947A480E7CC9C6F8A7</Checksum>
+        <Checksum>B5C407B3EC43CDE82152B1A777601512</Checksum>
+      </Template>
+      <Template>
+        <Name>drv_usart_static.c</Name>
+        <Path>Source Files/app/system_config/default/framework/driver/usart</Path>
+        <Checksum>3F04C1A2A3E93D0758DB2BCC11A53AD3</Checksum>
+      </Template>
+      <Template>
+        <Name>drv_tmr_static.h</Name>
+        <Path>Header Files/app/system_config/default/framework/driver/tmr</Path>
+        <Checksum>B9BBCD3BAFE7DE3D1D35D12D13379E76</Checksum>
       </Template>
       <Template>
         <Name>sys_clk_static.c</Name>
@@ -141,14 +170,9 @@
         <Checksum>A6E9E4C7092911C2F2016868A6A0527E</Checksum>
       </Template>
       <Template>
-        <Name>drv_tmr_static.h</Name>
-        <Path>Header Files/app/system_config/default/framework/driver/tmr</Path>
-        <Checksum>C548651C8ECE7B8B3457C7F720C65BB9</Checksum>
-      </Template>
-      <Template>
         <Name>system_definitions.h</Name>
         <Path>Header Files/app/system_config/default</Path>
-        <Checksum>4D5F11D21A93893A7B38353084AA2D4C</Checksum>
+        <Checksum>646F61D51535CC7CDB717E174AAC3F6F</Checksum>
       </Template>
     </Templates>
     <Libraries>

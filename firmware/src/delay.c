@@ -13,12 +13,23 @@ void debug_LED()
 }
 
 void delayusec(uint32_t usectime)
-{
+{ int i = 0;
+  USECTIMERFLAG = false;
   PLIB_TMR_Stop(TMR_ID_4);
   DRV_TMR0_CounterClear();
   PLIB_TMR_Period32BitSet(TMR_ID_4, usectime * (SYS_CLK_BUS_PERIPHERAL_1 / 1000000));
   DRV_TMR0_Start();
-  while (!PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_TIMER_5));
-  PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_TIMER_5);
+  while (1)
+  {
+    if (USECTIMERFLAG == 0)
+    {
+
+    } else
+    {
+      return;
+    }
+  };
+/*  while (!PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_TIMER_5));
+  PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_TIMER_5);*/
 }
 

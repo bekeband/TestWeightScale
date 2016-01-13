@@ -89,7 +89,7 @@ typedef enum
 {
 	/* Application's state machine's initial state. */
 	TEST_STATE_INIT = 0,
-  TEST_STATE_READ_BUTTONS = 1,
+  TEST_STATE_RUN = 1,
 	/* TODO: Define states used by the application state machine. */
 
 } TEST_STATES;
@@ -200,6 +200,10 @@ void TEST_Initialize ( void );
 
 
 void TEST_Tasks( void );
+
+volatile int USECTIMERFLAG;
+volatile int SCALE_READ_FLAG;
+volatile bool alarmTriggered;
 
 #endif /* _TEST_H */
 

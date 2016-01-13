@@ -28,7 +28,7 @@ char ButtonScan(void) {
 
 //	bitclr(TRISB, 0);
   OCOL1
-	delayusec(2000);
+	delayusec(DELAY_USEC);
 //  debug_LED();
 	//button 1 is pressed
 	if((COL2==1)&&(BM.B1==OFF)) { BM.B1=ON; return BUT_UP_ON; }
@@ -51,7 +51,7 @@ char ButtonScan(void) {
 
 //	bitclr(TRISB,1);
   OCOL2
-	delayusec(2000);
+	delayusec(DELAY_USEC);
 
 	//button 4 is pressed
 	if((COL1==1)&&(BM.B4==OFF)) { BM.B4=ON; return BUT_RG_ON; }
@@ -74,7 +74,7 @@ char ButtonScan(void) {
   
 //  bitclr(TRISB,2);
   OCOL3
-	delayusec(2000);
+	delayusec(DELAY_USEC);
 
 	//button 3 is pressed
 	if((COL1==1)&&(BM.B3==OFF)) { BM.B3=ON; return BUT_LF_ON; }
