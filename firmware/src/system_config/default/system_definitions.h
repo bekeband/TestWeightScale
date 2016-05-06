@@ -68,7 +68,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "driver/rtcc/drv_rtcc_static.h"
 #include "peripheral/int/plib_int.h"
 #include "peripheral/devcon/plib_devcon.h"
-#include "test.h"
+#include "Test.h"
 
 
 // DOM-IGNORE-BEGIN

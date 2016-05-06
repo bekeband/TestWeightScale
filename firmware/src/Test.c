@@ -54,7 +54,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 
-#include "test.h"
+#include "Test.h"
 #include "buttons.h"
 #include "HX711Reader.h"
 #include "peripheral/rtcc/plib_rtcc.h"
@@ -117,6 +117,24 @@ float GetScaleFloat()
 
 /******************************************************************************
   Function:
+    void USART0_WriteString(char* string);
+
+  Remarks:
+   
+ */
+
+void USART0_WriteString(char* string)
+{ int i = 0;
+  while (string[i] != 0)
+  {
+    DRV_USART0_WriteByte(string[i++]);
+  };
+  
+}
+
+
+/******************************************************************************
+  Function:
     void TEST_Tasks ( void )
 
   Remarks:
@@ -138,6 +156,7 @@ void TEST_Tasks ( void )
           Init_LCD();
           LCD_I2C_Backlight();
           LCD_I2C_PrintStr("bekeband.hu");
+          USART0_WriteString("bekeband.hu\n\r");
           LCD_I2C_SetCursor(0,1);
           LCD_I2C_PrintStr("init OK");
           SYS_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_6);
@@ -163,6 +182,8 @@ void TEST_Tasks ( void )
               SCALEW = (2.0 / 900000.0) * (int32_t)AVERAGE;
               SCALEW = SCALEW * 50;
               sprintf(BUFFER, "F=%10.2f kg", SCALEW);
+              USART0_WriteString(BUFFER);
+              USART0_WriteString("\n\r");
               LCD_I2C_SetCursor(0,1);
               LCD_I2C_PrintStr(BUFFER);
             }

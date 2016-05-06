@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configuration version="1.0.4.22">
+<configuration version="1.0.7.16">
   <Designer>
+    <Assets>
+      <Settings bpp="16">
+        <MemoryLocations>
+          <MemoryLocation address="0" id="default"/>
+        </MemoryLocations>
+      </Settings>
+    </Assets>
     <Screens height="200" width="320">
-      <Screen active="true" background="000000" export="true" name="Untitled" primary="true">
+      <Screen active="true" background="000000" clearOnShow="true" export="true" name="Untitled" primary="true" visible="true">
         <Objects/>
       </Screen>
     </Screens>
-    <Schemes>
+    <Schemes defaultSchemeName="default">
       <Scheme name="default">
-        <Alpha>255</Alpha>
+        <Alpha>100</Alpha>
         <BackgroundOffset>0,0</BackgroundOffset>
         <EmbossSize>3</EmbossSize>
         <Colors>
@@ -21,7 +28,11 @@
           <TextPrimary>000000</TextPrimary>
           <TextSecondary>FFFFFF</TextSecondary>
           <TextDisabled>404040</TextDisabled>
+          <GradientStart>000000</GradientStart>
+          <GradientEnd>FFFFFF</GradientEnd>
         </Colors>
+        <FillStyle>Color</FillStyle>
+        <BackgroundType>None</BackgroundType>
       </Scheme>
     </Schemes>
   </Designer>
@@ -32,23 +43,7 @@
   <Manifest>
     <Files>
       <File>
-        <Name>driver.h</Name>
-        <Path>Header Files/framework/driver</Path>
-      </File>
-      <File>
         <Name>sys_module.h</Name>
-        <Path>Header Files/framework/system/common</Path>
-      </File>
-      <File>
-        <Name>sys_devcon.c</Name>
-        <Path>Source Files/framework/system/devcon/src</Path>
-      </File>
-      <File>
-        <Name>sys_int.h</Name>
-        <Path>Header Files/framework/system/int</Path>
-      </File>
-      <File>
-        <Name>sys_common.h</Name>
         <Path>Header Files/framework/system/common</Path>
       </File>
       <File>
@@ -56,59 +51,46 @@
         <Path>Header Files/framework/system/ports</Path>
       </File>
       <File>
-        <Name>sys_int_pic32.c</Name>
-        <Path>Source Files/framework/system/int/src</Path>
+        <Name>sys_devcon_pic32mx.c</Name>
+        <Path>Source Files/framework/system/devcon/src</Path>
+      </File>
+      <File>
+        <Name>sys_devcon.c</Name>
+        <Path>Source Files/framework/system/devcon/src</Path>
       </File>
       <File>
         <Name>sys_ports.c</Name>
         <Path>Source Files/framework/system/ports/src</Path>
       </File>
       <File>
-        <Name>system.h</Name>
-        <Path>Header Files/framework/system</Path>
+        <Name>driver.h</Name>
+        <Path>Header Files/framework/driver</Path>
+      </File>
+      <File>
+        <Name>sys_common.h</Name>
+        <Path>Header Files/framework/system/common</Path>
+      </File>
+      <File>
+        <Name>sys_int_pic32.c</Name>
+        <Path>Source Files/framework/system/int/src</Path>
       </File>
       <File>
         <Name>sys_devcon.h</Name>
         <Path>Header Files/framework/system/devcon</Path>
       </File>
       <File>
-        <Name>sys_devcon_pic32mx.c</Name>
-        <Path>Source Files/framework/system/devcon/src</Path>
+        <Name>sys_int.h</Name>
+        <Path>Header Files/framework/system/int</Path>
+      </File>
+      <File>
+        <Name>system.h</Name>
+        <Path>Header Files/framework/system</Path>
       </File>
     </Files>
     <Templates>
       <Template>
-        <Name>main.c</Name>
-        <Path>Source Files/app</Path>
-      </Template>
-      <Template>
-        <Name>system_exceptions.c</Name>
-        <Path>Source Files/app/system_config/default</Path>
-        <Checksum>C111969CA43D6CEA1E9E33A6164E7AE0</Checksum>
-      </Template>
-      <Template>
         <Name>Test.h</Name>
         <Path>Header Files/app</Path>
-      </Template>
-      <Template>
-        <Name>system_config.h</Name>
-        <Path>Header Files/app/system_config/default</Path>
-        <Checksum>F74C4104752C928D79436570BEFA2942</Checksum>
-      </Template>
-      <Template>
-        <Name>drv_i2c_static.c</Name>
-        <Path>Source Files/app/system_config/default/framework/driver/i2c/src</Path>
-        <Checksum>3B29BE6D99D3D63D4B403C8FEA68484A</Checksum>
-      </Template>
-      <Template>
-        <Name>drv_usart_static.h</Name>
-        <Path>Header Files/app/system_config/default/framework/driver/usart</Path>
-        <Checksum>78816446BC37CA452E12C9F1F3586B2C</Checksum>
-      </Template>
-      <Template>
-        <Name>system_interrupt.c</Name>
-        <Path>Source Files/app/system_config/default</Path>
-        <Checksum>3D63CD384F424DF291F998C7DC24DF79</Checksum>
       </Template>
       <Template>
         <Name>sys_ports_static.c</Name>
@@ -116,28 +98,33 @@
         <Checksum>245F2E988C33202E34AECDD1DF521499</Checksum>
       </Template>
       <Template>
-        <Name>sys_clk_static.h</Name>
-        <Path>Header Files/app/system_config/default/framework/system/clk</Path>
-        <Checksum>999179DADE9ECD59953526F5E9F83ACC</Checksum>
-      </Template>
-      <Template>
-        <Name>system_tasks.c</Name>
+        <Name>system_init.c</Name>
         <Path>Source Files/app/system_config/default</Path>
-        <Checksum>30A3D60563291E4FDA4D861EE036C463</Checksum>
+        <Checksum>B5C407B3EC43CDE82152B1A777601512</Checksum>
       </Template>
       <Template>
-        <Name>drv_tmr_static.c</Name>
-        <Path>Source Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum>79F90B0C3F64CDC7465323EF6A48C696</Checksum>
-      </Template>
-      <Template>
-        <Name>Test.c</Name>
+        <Name>main.c</Name>
         <Path>Source Files/app</Path>
       </Template>
       <Template>
-        <Name>drv_i2c_static.h</Name>
-        <Path>Header Files/app/system_config/default/framework/driver/i2c</Path>
-        <Checksum>BDDCED2F6306E40124682DAB41CC554F</Checksum>
+        <Name>drv_i2c_static.c</Name>
+        <Path>Source Files/app/system_config/default/framework/driver/i2c/src</Path>
+        <Checksum>3B29BE6D99D3D63D4B403C8FEA68484A</Checksum>
+      </Template>
+      <Template>
+        <Name>drv_tmr_static.h</Name>
+        <Path>Header Files/app/system_config/default/framework/driver/tmr</Path>
+        <Checksum>B9BBCD3BAFE7DE3D1D35D12D13379E76</Checksum>
+      </Template>
+      <Template>
+        <Name>system_exceptions.c</Name>
+        <Path>Source Files/app/system_config/default</Path>
+        <Checksum>C111969CA43D6CEA1E9E33A6164E7AE0</Checksum>
+      </Template>
+      <Template>
+        <Name>system_definitions.h</Name>
+        <Path>Header Files/app/system_config/default</Path>
+        <Checksum>646F61D51535CC7CDB717E174AAC3F6F</Checksum>
       </Template>
       <Template>
         <Name>drv_rtcc_static.h</Name>
@@ -150,29 +137,53 @@
         <Checksum>BF72A08166E6B7B7D3F73E4429742E82</Checksum>
       </Template>
       <Template>
-        <Name>system_init.c</Name>
-        <Path>Source Files/app/system_config/default</Path>
-        <Checksum>B5C407B3EC43CDE82152B1A777601512</Checksum>
-      </Template>
-      <Template>
         <Name>drv_usart_static.c</Name>
         <Path>Source Files/app/system_config/default/framework/driver/usart</Path>
         <Checksum>3F04C1A2A3E93D0758DB2BCC11A53AD3</Checksum>
       </Template>
       <Template>
-        <Name>drv_tmr_static.h</Name>
-        <Path>Header Files/app/system_config/default/framework/driver/tmr</Path>
-        <Checksum>B9BBCD3BAFE7DE3D1D35D12D13379E76</Checksum>
+        <Name>drv_usart_static.h</Name>
+        <Path>Header Files/app/system_config/default/framework/driver/usart</Path>
+        <Checksum>78816446BC37CA452E12C9F1F3586B2C</Checksum>
+      </Template>
+      <Template>
+        <Name>drv_i2c_static.h</Name>
+        <Path>Header Files/app/system_config/default/framework/driver/i2c</Path>
+        <Checksum>BDDCED2F6306E40124682DAB41CC554F</Checksum>
+      </Template>
+      <Template>
+        <Name>system_tasks.c</Name>
+        <Path>Source Files/app/system_config/default</Path>
+        <Checksum>30A3D60563291E4FDA4D861EE036C463</Checksum>
+      </Template>
+      <Template>
+        <Name>system_config.h</Name>
+        <Path>Header Files/app/system_config/default</Path>
+        <Checksum>F74C4104752C928D79436570BEFA2942</Checksum>
+      </Template>
+      <Template>
+        <Name>drv_tmr_static.c</Name>
+        <Path>Source Files/app/system_config/default/framework/driver/tmr/src</Path>
+        <Checksum>79F90B0C3F64CDC7465323EF6A48C696</Checksum>
+      </Template>
+      <Template>
+        <Name>system_interrupt.c</Name>
+        <Path>Source Files/app/system_config/default</Path>
+        <Checksum>3D63CD384F424DF291F998C7DC24DF79</Checksum>
+      </Template>
+      <Template>
+        <Name>sys_clk_static.h</Name>
+        <Path>Header Files/app/system_config/default/framework/system/clk</Path>
+        <Checksum>999179DADE9ECD59953526F5E9F83ACC</Checksum>
+      </Template>
+      <Template>
+        <Name>Test.c</Name>
+        <Path>Source Files/app</Path>
       </Template>
       <Template>
         <Name>sys_clk_static.c</Name>
         <Path>Source Files/app/system_config/default/framework/system/clk/src</Path>
         <Checksum>A6E9E4C7092911C2F2016868A6A0527E</Checksum>
-      </Template>
-      <Template>
-        <Name>system_definitions.h</Name>
-        <Path>Header Files/app/system_config/default</Path>
-        <Checksum>646F61D51535CC7CDB717E174AAC3F6F</Checksum>
       </Template>
     </Templates>
     <Libraries>
